@@ -1,6 +1,7 @@
 import OrgChart from "./OrgChart";
 import { Box } from "@mui/material";
 import { dataSet } from "./data/sampleData";
+import { useState } from "react";
 
 function App() {
   // const sampleData = [
@@ -87,9 +88,16 @@ function App() {
     // fontColor: "red",
   };
 
+  const [count , setCount] = useState(0);
+
+  const handleCounter = () =>{
+    setCount((prev) => prev +1)
+  }
+
   return (
     <>
       {/* <Typography variant="h4">Hubino-Chart</Typography> */}
+      <button onClick={handleCounter} style={{padding:'5px', background:'green', color:'white'}}>{count}</button>
       <Box
         sx={{
           margin: "auto",
