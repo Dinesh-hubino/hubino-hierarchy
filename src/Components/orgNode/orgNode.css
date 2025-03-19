@@ -1,0 +1,138 @@
+.org-tree {
+  width: 100%;
+}
+
+.horizontal-tree {
+  /* background-color: red; */
+  transform: rotate(-90deg); /* new */
+  display: flex; /* new */
+  flex-direction: row-reverse; /* new */
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  border-radius: 10px !important;
+  padding: 15px 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1) !important;
+  background-color: white;
+}
+
+.position-text {
+  color: var(--primary-color) !important;
+}
+
+.card-flex {
+  display: flex; /* new */
+  justify-content: center; /* new */
+  align-items: center; /* new */
+}
+
+.card-content {
+  /* new */
+  /* width: 300px; */
+  height: auto;
+  /* background-color: green; */
+  transform: rotate(90deg);
+}
+
+.icon-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.avatar {
+  width: 80px !important;
+  height: 80px !important;
+  margin: auto;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: var(--primary-color) !important;
+}
+
+.title,
+.region {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color) !important;
+}
+
+.description {
+  color: var(--primary-color) !important;
+}
+
+/*Formats Border on nodes*/
+
+.org-tree ul {
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+  padding-top: 3vh;
+  position: relative;
+  justify-content: center;
+}
+.org-tree ul::before {
+  content: "";
+  top: 0vh;
+  left: 50%;
+  height: 3vh;
+  position: absolute;
+  border: 1px solid #b1b1b7;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: -1;
+}
+.org-tree ul:first-child::before {
+  display: none;
+}
+
+.org-tree ul li {
+  display: flex;
+  padding-top: 5vh;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.org-tree li::before {
+  content: "";
+  top: 0;
+  left: 50%;
+  height: 5vh;
+  position: absolute;
+  border: 1px solid #b1b1b7;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: -1;
+}
+.org-tree ul li::after {
+  content: "";
+  top: 0;
+  width: 100%;
+  position: absolute;
+  border-top: 2px solid #b1b1b7;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: -1;
+}
+.org-tree ul li:only-child::after {
+  display: none;
+}
+.org-tree ul li:first-of-type::after {
+  width: 50%;
+  right: 0;
+}
+.org-tree li:last-of-type::after {
+  width: 50%;
+  left: 0;
+}
+.org-tree li:only-child {
+  padding-top: 0;
+}
+.org-tree li:only-child::before {
+  display: none;
+}
